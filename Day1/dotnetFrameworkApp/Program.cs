@@ -11,7 +11,8 @@ namespace dotnetFrameworkApp
         static void Main(string[] args)
         {
             Console.WriteLine("this is framework applictaion");
-            Console.Read();
+            
+          
         }
     }
 }

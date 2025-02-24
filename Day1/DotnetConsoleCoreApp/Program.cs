@@ -45,6 +45,7 @@ namespace DotnetConsoleCoreApp
             //dynamic marks=100;
             //Console.WriteLine(marks.GetType());
             #endregion
+            #region Taking userInput
             Console.WriteLine("Enter your Name::");
             string name=Console.ReadLine();
             
@@ -65,12 +66,14 @@ namespace DotnetConsoleCoreApp
             }
             //int age1 = int.Parse(Console.ReadLine()); 
             bool result;
-            //int a;
+            int a;
             //string age =null;
-           // result = int.TryParse(Console.ReadLine(),out a);
+            result = int.TryParse(Console.ReadLine(),out a);
+           
             //Console.WriteLine(result);
-           // Console.WriteLine($"Name::{name}\t age::{a}");
-          
+            // Console.WriteLine($"Name::{name}\t age::{a}");
+            #endregion
+
 
 
 
