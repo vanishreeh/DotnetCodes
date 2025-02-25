@@ -5,6 +5,7 @@
         static void Main(string[] args)
         {
             #region Single dimension Array
+           // string filePath = @"c:\Cognixia\DotnetCodes";
             //declare an Array
             //int[] marks;
             //int[] marks = new int[5];
