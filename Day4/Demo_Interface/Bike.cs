@@ -8,6 +8,11 @@ namespace Demo_Interface
 {
     class Bike : IOrder, IBike
     {
+        void IBike.AddBike(Bike bike)
+        {
+            throw new NotImplementedException();
+        }
+        //Implicit Interface
         //public void AddBike(Bike bike)
         //{
         //    Console.WriteLine("Bike Added");
@@ -22,6 +27,7 @@ namespace Demo_Interface
         //{
         //    return true;
         //}
+        //Explicit Interfaces
         int IOrder.GetBikeById(int id)
         {
             throw new NotImplementedException();
