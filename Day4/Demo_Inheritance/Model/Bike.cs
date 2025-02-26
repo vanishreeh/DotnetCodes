@@ -25,7 +25,7 @@ namespace Demo_Inheritance.Model
         //{
         //    return $"BikeId::{BikeId}\t name::{BikeName}\t Price::{Price}";
         //}
-        public  string GetAllBikeDetails()
+        public virtual string GetAllBikeDetails()
         {
             return $"BikeId::{BikeId}\t name::{BikeName}\t Price::{Price}";
         }

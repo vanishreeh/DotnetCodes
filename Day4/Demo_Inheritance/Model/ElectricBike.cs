@@ -34,9 +34,9 @@ namespace Demo_Inheritance.Model
             Console.WriteLine($"Id::{BikeId}name::{BikeName}");
         }
         //Runtime Polymorphism,LateBinding
-        //public override string GetAllBikeDetails()
-        //{
-        //    return $"BikeId::{BikeId}\t name::{BikeName}\t Price::{Price}\tRange::{Range}\tCapacity::{Capacity}";
-        //}
+        public override string GetAllBikeDetails()
+        {
+            return $"BikeId::{BikeId}\t name::{BikeName}\t Price::{Price}\tRange::{Range}\tCapacity::{Capacity}";
+        }
     }
 }

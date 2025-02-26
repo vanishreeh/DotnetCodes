@@ -13,7 +13,7 @@ namespace Demo_Inheritance
             //Console.WriteLine($"Id::{electricBike.BikeId}\tName::{electricBike.BikeName}\tPrice::{electricBike.Price}\tCapacity::{electricBike.Capacity}\tRange::{electricBike.Range}");
             //Console.WriteLine(electricBike.GetAllBikeDetails());
             //Console.WriteLine(bike.GetAllBikeDetails());
-            Console.WriteLine(bike1.GetAllBikeDetails());//
+            Console.WriteLine(bike1.GetAllBikeDetails());
             // GetBikeDetails(bike as ElectricBike);//to convert types
            
         }
