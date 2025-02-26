@@ -9,5 +9,6 @@ namespace Demo_Interface
     interface IBike
     {
         void AddBike(Bike bike);
+      
     }
 }
