@@ -7,6 +7,7 @@ namespace Demo_UseCaseException
     {
         static void Main(string[] args)
         {
+           
             IBikeRepository bikeRepo = new BikeRepository();
            List<Bike>allBikes= bikeRepo.GetAllBikes();
             //foreach(Bike bike in allBikes)
