@@ -6,6 +6,7 @@ namespace Demo_Threading
     internal class Program
     {
         static int counter = 0; //shared resource
+        static object lockObj = new object();
         static void Main(string[] args)
         {
             #region SingleThread Concept  
@@ -121,7 +122,27 @@ namespace Demo_Threading
         {
             for(int i = 0; i < 5000; i++)
             {
-                counter++;
+                // counter++;//multiple threads may modify this
+
+                lock (lockObj)//only one thread is allowed to modify counter value
+                {
+                    counter++;
+                }
+                //Monitor
+                bool lockTaken = false;//craeting flag to track lock status
+                try
+                {
+                    Monitor.Enter(lockObj, ref lockTaken);
+                    counter++;//only one thread at a time modifies this
+                       
+                }
+                finally
+                {
+                    if (lockTaken)
+                    {
+                        Monitor.Exit(lockObj);
+                    }
+                }
             }
         }
     }
