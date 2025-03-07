@@ -27,9 +27,9 @@ namespace Demo_BikeStoreAPP.Repository
 
         public int AddBike(Bike bike)
         {
-            using (SqlConnection sqlConnection=new SqlConnection(connstring))
+            using (SqlConnection sqlConnection = new SqlConnection(connstring))
             {
-               // cmd.Parameters.Clear();
+                // cmd.Parameters.Clear();
                 cmd.CommandText = "Insert into Bikes values(@BikeId,@BikeName,@Price,@CategoryId,@Quantity)";
                 cmd.Parameters.AddWithValue("@BikeId", bike.BikeId);
                 cmd.Parameters.AddWithValue("@BikeName", bike.BikeName);
@@ -38,8 +38,8 @@ namespace Demo_BikeStoreAPP.Repository
                 cmd.Parameters.AddWithValue("@Quantity", bike.Quantity);
                 cmd.Connection = sqlConnection;
                 sqlConnection.Open();
-               return cmd.ExecuteNonQuery();
-              // return cmd.ExecuteScalar();//check this method
+                return cmd.ExecuteNonQuery();
+                // return cmd.ExecuteScalar();//check this method
 
             }
         }
@@ -87,7 +87,7 @@ namespace Demo_BikeStoreAPP.Repository
             using (SqlConnection sqlConnection = new SqlConnection(connstring))
             {
                 #region Executing StoredProcedures with ADO.net
-                //cmd = new SqlCommand("GetAllBikes");
+                //cmd = new SqlCommand("GetAllBikes ");
                 //cmd.CommandType = CommandType.StoredProcedure;
                 #endregion
 
@@ -95,6 +95,7 @@ namespace Demo_BikeStoreAPP.Repository
                 cmd.Connection = sqlConnection;
                 sqlConnection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
+                
                 while (reader.Read())
                 {
                     //create an object of BikeClass
@@ -118,10 +119,28 @@ namespace Demo_BikeStoreAPP.Repository
 
         }
 
-        int IBikeRepository.AddBike(Bike bike)
+        public int UpdateBike(int id)
         {
-            throw new NotImplementedException();
+            using (SqlConnection sqlConnection = new SqlConnection(connstring))
+            {
+                Console.WriteLine("Enter Price");
+                decimal rate = Convert.ToDecimal(Console.ReadLine());
+                Console.WriteLine("Enter Quantity");
+                int quantity = Convert.ToInt32(Console.ReadLine());
+                cmd.CommandText = "Update Bikes set Price=@Price,Quantity=@Quantity where BikeId=@BikeId";
+                cmd.Parameters.AddWithValue("@BikeId", id);
+                cmd.Parameters.AddWithValue("@Price", rate);
+                cmd.Parameters.AddWithValue("@Quantity", quantity);
+                cmd.Connection = sqlConnection;
+                sqlConnection.Open();
+                return cmd.ExecuteNonQuery();
+
+            }
         }
+
+
     }
 }
+
+
 
