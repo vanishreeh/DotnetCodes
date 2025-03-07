@@ -13,6 +13,6 @@ namespace Demo_BikeStoreAPP.Repository
       int AddBike(Bike bike);
         int DeleteBike(int Id);
         int UpdateBike(int id);
-        void GetBikeById(int id);
+       // void GetBikeById(int id);
     }
 }
