@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BikeAPPFramework.Model;
+using BikeAPPFramework.Repository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +12,12 @@ namespace BikeAPPFramework
     {
         static void Main(string[] args)
         {
+            BikeRepository repository = new BikeRepository();
+           List<Bike> allBikes= repository.GetAllBikes();
+            foreach(Bike item in allBikes)
+            {
+                Console.WriteLine(item);
+            }
         }
     }
 }
