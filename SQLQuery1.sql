@@ -7,7 +7,7 @@ drop database if Exists PolicyDb
 drop database if Exists SISDb
 --Modify the database name from SISDb to StudentInfoDb
 alter database SISDb Modify Name=StudentInfoDb
-
+select * from Bikes
 --create a table
 create table Bikes(
 BikeId int primary key,
