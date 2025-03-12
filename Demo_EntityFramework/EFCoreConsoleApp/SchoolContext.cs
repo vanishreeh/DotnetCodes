@@ -16,5 +16,10 @@ namespace EFCoreConsoleApp
         {
             optionsBuilder.UseSqlServer("Server=DESKTOP-0TE71RT;Database=SchoolInformationDb;Trusted_Connection=True;");
         }
+
+        //protected override void OnModelCreating(ModelBuilder modelBuilder)
+        //{
+        //    base.OnModelCreating(modelBuilder);
+        //}
     }
 }

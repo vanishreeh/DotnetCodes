@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataBaseFirstApproach", "Da
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelFirstApproach", "ModelFirstApproach\ModelFirstApproach.csproj", "{484AFED9-807A-40D5-8922-5ABE075AF504}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo_FluentApi", "Demo_FluentApi\Demo_FluentApi.csproj", "{817F65AB-0E00-49DE-A464-3EAFD458F66C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{484AFED9-807A-40D5-8922-5ABE075AF504}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{484AFED9-807A-40D5-8922-5ABE075AF504}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{484AFED9-807A-40D5-8922-5ABE075AF504}.Release|Any CPU.Build.0 = Release|Any CPU
+		{817F65AB-0E00-49DE-A464-3EAFD458F66C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{817F65AB-0E00-49DE-A464-3EAFD458F66C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{817F65AB-0E00-49DE-A464-3EAFD458F66C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{817F65AB-0E00-49DE-A464-3EAFD458F66C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -7,6 +7,7 @@
       <Diagram DiagramId="d3a0eac61c39480fa6cd40d33224c60d" Name="Diagram1" >
         <EntityTypeShape EntityType="DbModel.Employee" Width="1.5" PointX="2.5" PointY="0.625" />
         <EntityTypeShape EntityType="DbModel.Project" Width="1.5" PointX="5.875" PointY="1" />
+        <AssociationConnector Association="DbModel.EmployeeProject" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

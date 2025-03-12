@@ -8,7 +8,8 @@ namespace DataBaseFirstApproach.Model
         public int StudentId { get; set; }
         public string Name { get; set; } = null!;
         public int GradeId { get; set; }
-
+        public int Age { get; set; }
+        public string City { get; set; }
         public virtual Grade Grade { get; set; } = null!;
     }
 }
