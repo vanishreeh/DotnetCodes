@@ -11,7 +11,8 @@ namespace MVCCoreProductAppWithList
             // Add services to the container.
             builder.Services.AddControllersWithViews();
             builder.Services.AddSingleton<IProductRepository, ProductRepository>();
-
+            //builder.Services.AddScoped<IProductRepository, ProductRepository>();
+            //builder.Services.AddTransient<IProductRepository, ProductRepository>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -31,7 +32,7 @@ namespace MVCCoreProductAppWithList
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Product}/{action=GetProducts}/{id?}");
+                pattern: "{controller=Product}/{action=AddProduct}/{id?}");
 
             app.Run();
         }

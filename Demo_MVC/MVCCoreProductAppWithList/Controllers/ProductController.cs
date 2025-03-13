@@ -17,5 +17,42 @@ namespace MVCCoreProductAppWithList.Controllers
             List<Product>allProducts= _productRepository.GetProducts();
             return View(allProducts);
         }
+
+        [HttpGet]
+        public IActionResult AddProduct()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult AddProduct(Product product)
+        {
+            _productRepository.AddProduct(product);
+            return View();
+            //return RedirectToAction("GetProducts");
+        }
+        [HttpGet]
+        
+        [HttpDelete]
+        public IActionResult Delete(int id)
+        {
+            //var product = _productRepository.GetProductById(id);
+            
+            _productRepository.Delete(id);
+            //return View(product);
+          return RedirectToAction("GetProducts");
+        }
+
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            var product = _productRepository.GetProductById(id);
+            return View(product);
+        }
+        public IActionResult Edit(Product product)
+        {
+            _productRepository.UpdateProduct(product);
+            return RedirectToAction("GetProducts");
+
+        }
     }
 }
