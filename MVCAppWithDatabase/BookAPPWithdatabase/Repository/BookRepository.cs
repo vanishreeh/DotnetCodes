@@ -13,9 +13,26 @@ namespace BookAPPWithdatabase.Repository
             _bookDbContext = bookDbContext;
         }
 
+        public  async Task<int> AddBook(Book book)
+        {
+            await _bookDbContext.Books.AddAsync(book);
+           return await _bookDbContext.SaveChangesAsync();
+        }
+
+        public async Task<IEnumerable<Author>> GetAllAuthors()
+        {
+           return  await _bookDbContext.Authors.ToListAsync();
+        }
+
         public async Task<IEnumerable<Book>> GetAllbooks()
         {
             return await _bookDbContext.Books.Include(b=>b.Author).ToListAsync();
+        }
+
+        public async Task<Book> GetBookById(int id)
+        {
+            return await _bookDbContext.Books.Include(b=>b.Author).FirstOrDefaultAsync(b => b.Id == id);
+      
         }
     }
 }
