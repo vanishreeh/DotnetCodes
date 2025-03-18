@@ -1,5 +1,6 @@
 using BookAPPWithdatabase.AspectOrientedProgramming;
 using BookAPPWithdatabase.Context;
+using BookAPPWithdatabase.Logginglogic;
 using BookAPPWithdatabase.Repository;
 using BookAPPWithdatabase.Service;
 using Microsoft.EntityFrameworkCore;
@@ -18,7 +19,9 @@ namespace BookAPPWithdatabase
             builder.Services.AddDbContext<BookDbContext>(options => options.UseSqlServer(conn));
             builder.Services.AddScoped<IBookService, BookService>();
             builder.Services.AddScoped<IBookRepository, BookRepository>();
+            builder.Services.AddSingleton<CustomLogger>();
             builder.Services.AddScoped<ExceptionHandlerAttribute>();
+            builder.Services.AddScoped<AddResultFiler>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

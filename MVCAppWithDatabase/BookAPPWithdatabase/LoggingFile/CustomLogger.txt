@@ -1,0 +1,35 @@
+﻿StartTime::18/03/2025 15:16:06	Controller::Book	Action::AddBookEndTime::18/03/2025 15:16:09	Total time::3.5682349
+StartTime::18/03/2025 15:16:21	Controller::Book	Action::GetAllBooksEndTime::18/03/2025 15:16:22	Total time::0.5318475
+StartTime::18/03/2025 15:18:04	Controller::Home	Action::PrivacyEndTime::18/03/2025 15:18:04	Total time::0.0161152
+StartTime::18/03/2025 15:18:08	Controller::Home	Action::IndexEndTime::18/03/2025 15:18:08	Total time::0.0009266
+StartTime::18/03/2025 15:18:11	Controller::Home	Action::PrivacyEndTime::18/03/2025 15:18:11	Total time::0.0004239
+StartTime::18/03/2025 15:19:47	Controller::Home	Action::PrivacyEndTime::18/03/2025 15:19:47	Total time::0.0115205
+StartTime::18/03/2025 15:19:53	Controller::Home	Action::IndexEndTime::18/03/2025 15:20:14	Total time::20.5707327
+StartTime::18/03/2025 15:20:51	Controller::Home	Action::PrivacyEndTime::18/03/2025 15:20:51	Total time::0.0121434
+StartTime::18/03/2025 15:21:20	Controller::Home	Action::PrivacyEndTime::18/03/2025 15:21:49	Total time::28.9557066
+StartTime::18/03/2025 15:37:43	Controller::Home	Action::PrivacyEndTime::18/03/2025 15:37:43	Total time::0.0082687
+StartTime::18/03/2025 15:37:53	Controller::Home	Action::IndexEndTime::18/03/2025 15:37:53	Total time::0.0006493
+StartTime::18/03/2025 15:38:04	Controller::Home	Action::IndexEndTime::18/03/2025 15:38:04	Total time::0.0004133
+StartTime::18/03/2025 15:38:07	Controller::Home	Action::IndexEndTime::18/03/2025 15:38:07	Total time::0.0010474
+StartTime::18/03/2025 15:39:21	Controller::Home	Action::PrivacyEndTime::18/03/2025 15:39:21	Total time::0.0408769
+StartTime::18/03/2025 15:41:28	Controller::Home	Action::IndexEndTime::18/03/2025 15:41:28	Total time::0.001081
+StartTime::18/03/2025 15:41:37	Controller::Home	Action::IndexEndTime::18/03/2025 15:41:37	Total time::0.000492
+StartTime::18/03/2025 15:46:05	Controller::Home	Action::PrivacyEndTime::18/03/2025 15:46:05	Total time::0.0255598
+StartTime::18/03/2025 15:46:16	Controller::Home	Action::PrivacyEndTime::18/03/2025 15:46:16	Total time::0.0007022
+StartTime::18/03/2025 15:46:26	Controller::Home	Action::IndexEndTime::18/03/2025 15:46:26	Total time::0.000949
+StartTime::18/03/2025 16:05:32	Controller::Home	Action::PrivacyEndTime::18/03/2025 16:05:32	Total time::0.0091681
+StartTime::18/03/2025 16:05:37	Controller::Book	Action::AddBookStartTime::18/03/2025 16:05:40	Controller::Book	Action::GetAllBooksEndTime::18/03/2025 16:05:41	Total time::0.7503525
+EndTime::18/03/2025 16:05:41	Total time::0.8208007
+StartTime::18/03/2025 16:14:20	Controller::Home	Action::PrivacyEndTime::18/03/2025 16:14:20	Total time::0.0170938
+StartTime::18/03/2025 16:14:25	Controller::Book	Action::AddBookEndTime::18/03/2025 16:14:28	Total time::3.3282096
+StartTime::18/03/2025 16:15:17	Controller::Home	Action::PrivacyEndTime::18/03/2025 16:15:17	Total time::0.0371199
+StartTime::18/03/2025 16:15:38	Controller::Book	Action::AddBookEndTime::18/03/2025 16:15:41	Total time::3.0764201
+StartTime::18/03/2025 16:15:50	Controller::Book	Action::AddBookStartTime::18/03/2025 16:16:50	Controller::Home	Action::PrivacyEndTime::18/03/2025 16:16:50	Total time::0.0145225
+StartTime::18/03/2025 16:16:55	Controller::Book	Action::AddBookEndTime::18/03/2025 16:16:58	Total time::2.8956661
+StartTime::18/03/2025 16:17:02	Controller::Book	Action::AddBookEndTime::18/03/2025 16:17:02	Total time::0.0425002
+StartTime::18/03/2025 16:57:35	Controller::Home	Action::PrivacyEndTime::18/03/2025 16:57:35	Total time::0.0192909
+StartTime::18/03/2025 16:58:19	Controller::Home	Action::PrivacyEndTime::18/03/2025 16:58:19	Total time::0.0124531
+StartTime::18/03/2025 16:58:54	Controller::Book	Action::SearchStartTime::18/03/2025 16:58:56	Controller::Book	Action::SearchEndTime::18/03/2025 16:58:58	Total time::2.377607
+StartTime::18/03/2025 16:59:45	Controller::Home	Action::PrivacyEndTime::18/03/2025 16:59:45	Total time::0.0150828
+StartTime::18/03/2025 16:59:51	Controller::Book	Action::SearchEndTime::18/03/2025 16:59:55	Total time::3.7152648
+StartTime::18/03/2025 17:01:37	Controller::Book	Action::AddBookEndTime::18/03/2025 17:01:37	Total time::0.0570446

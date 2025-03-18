@@ -38,5 +38,11 @@ namespace BookAPPWithdatabase.Repository
         {
             return await _bookDbContext.Books.Include(b => b.Author).ToListAsync();
         }
+
+        public async Task<IEnumerable<Book>> SearchBook(string name)
+        {
+            return await _bookDbContext.Books.Include(b => b.Author).Where(b=>b.Title==name ||b.Author.Name==name)
+                .ToListAsync();
+        }
     }
 }

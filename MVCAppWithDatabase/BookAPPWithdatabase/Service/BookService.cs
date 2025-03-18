@@ -48,5 +48,10 @@ namespace BookAPPWithdatabase.Service
 
             }).ToList();
         }
+
+        public async Task<IEnumerable<Book>> SearchBook(string name)
+        {
+          return await  _bookRepository.SearchBook(name);
+        }
     }
 }

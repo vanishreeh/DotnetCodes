@@ -11,5 +11,6 @@ namespace BookAPPWithdatabase.Service
         Task<IEnumerable<Book>> GetAllBooks();
         Task<Book> GetBookById(int id);
         Task<IEnumerable<BookViewModel>> GetBooks();
+        Task<IEnumerable<Book>> SearchBook(string name);
     }
 }

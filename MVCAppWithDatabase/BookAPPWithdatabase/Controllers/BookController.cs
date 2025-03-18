@@ -1,6 +1,8 @@
 ﻿using BookAPPWithdatabase.AspectOrientedProgramming;
+using BookAPPWithdatabase.Logginglogic;
 using BookAPPWithdatabase.Models;
 using BookAPPWithdatabase.Service;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Runtime.CompilerServices;
@@ -8,6 +10,8 @@ using System.Runtime.CompilerServices;
 namespace BookAPPWithdatabase.Controllers
 {
     [ServiceFilter(typeof(ExceptionHandlerAttribute))]
+    [ServiceFilter(typeof(CustomLogger))]
+    //[Authorize(Roles ="Admin")]
     public class BookController : Controller
     {
         readonly IBookService _bookService;
@@ -104,5 +108,11 @@ namespace BookAPPWithdatabase.Controllers
 
         }
         #endregion
+
+        public async Task<IActionResult>Search(string name)
+        {
+         var books= await  _bookService.SearchBook(name);
+            return View(books);
+        }
     }
 }

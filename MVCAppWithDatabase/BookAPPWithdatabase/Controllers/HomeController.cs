@@ -1,10 +1,14 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using BookAPPWithdatabase.Models;
+using BookAPPWithdatabase.Logginglogic;
 
 namespace BookAPPWithdatabase.Controllers;
 //[Route("[controller]/[action]")]
 //[Route("[controller]")]
+[ServiceFilter(typeof(CustomLogger))]
+[ServiceFilter(typeof(AddResultFiler))]
+//[AddHeader]
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
