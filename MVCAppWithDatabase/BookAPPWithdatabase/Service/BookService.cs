@@ -1,6 +1,7 @@
 ﻿using BookAPPWithdatabase.Exceptions;
 using BookAPPWithdatabase.Models;
 using BookAPPWithdatabase.Repository;
+using BookAPPWithdatabase.ViewModels;
 
 namespace BookAPPWithdatabase.Service
 {
@@ -34,6 +35,18 @@ namespace BookAPPWithdatabase.Service
             if (book == null)
                 throw new BookNotFoundException($"Book with Id{id} not found");
             return book;
+        }
+
+        public async  Task<IEnumerable<BookViewModel>> GetBooks()
+        {
+            var books = await _bookRepository.Getbooks();
+          return  books.Select(b => new BookViewModel
+            {
+                Id = b.Id,
+                Title = b.Title,
+                AuthorName = b.Author.Name
+
+            }).ToList();
         }
     }
 }

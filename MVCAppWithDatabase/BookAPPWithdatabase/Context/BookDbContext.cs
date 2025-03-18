@@ -1,5 +1,6 @@
 ﻿using BookAPPWithdatabase.Models;
 using Microsoft.EntityFrameworkCore;
+using BookAPPWithdatabase.ViewModels;
 
 namespace BookAPPWithdatabase.Context
 {
@@ -12,5 +13,6 @@ namespace BookAPPWithdatabase.Context
         }
         public DbSet<Book> Books { get; set; }
         public DbSet<Author> Authors { get; set; }
+        public DbSet<BookAPPWithdatabase.ViewModels.BookViewModel>? BookViewModel { get; set; }
     }
 }

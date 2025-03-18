@@ -34,5 +34,9 @@ namespace BookAPPWithdatabase.Repository
             return await _bookDbContext.Books.Include(b=>b.Author).FirstOrDefaultAsync(b => b.Id == id);
       
         }
+        public async Task<IEnumerable<Book>> Getbooks()
+        {
+            return await _bookDbContext.Books.Include(b => b.Author).ToListAsync();
+        }
     }
 }

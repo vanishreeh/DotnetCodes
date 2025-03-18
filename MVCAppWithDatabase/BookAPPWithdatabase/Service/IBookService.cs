@@ -1,4 +1,5 @@
 ﻿using BookAPPWithdatabase.Models;
+using BookAPPWithdatabase.ViewModels;
 using System.Collections;
 
 namespace BookAPPWithdatabase.Service
@@ -9,5 +10,6 @@ namespace BookAPPWithdatabase.Service
         Task<IEnumerable<Author>> GetAllAuthors();
         Task<IEnumerable<Book>> GetAllBooks();
         Task<Book> GetBookById(int id);
+        Task<IEnumerable<BookViewModel>> GetBooks();
     }
 }

@@ -1,3 +1,4 @@
+using BookAPPWithdatabase.AspectOrientedProgramming;
 using BookAPPWithdatabase.Context;
 using BookAPPWithdatabase.Repository;
 using BookAPPWithdatabase.Service;
@@ -17,6 +18,7 @@ namespace BookAPPWithdatabase
             builder.Services.AddDbContext<BookDbContext>(options => options.UseSqlServer(conn));
             builder.Services.AddScoped<IBookService, BookService>();
             builder.Services.AddScoped<IBookRepository, BookRepository>();
+            builder.Services.AddScoped<ExceptionHandlerAttribute>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
