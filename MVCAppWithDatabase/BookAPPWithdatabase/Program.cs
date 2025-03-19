@@ -3,7 +3,9 @@ using BookAPPWithdatabase.Context;
 using BookAPPWithdatabase.Logginglogic;
 using BookAPPWithdatabase.Repository;
 using BookAPPWithdatabase.Service;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 
 namespace BookAPPWithdatabase
 {
@@ -22,6 +24,24 @@ namespace BookAPPWithdatabase
             builder.Services.AddSingleton<CustomLogger>();
             builder.Services.AddScoped<ExceptionHandlerAttribute>();
             builder.Services.AddScoped<AddResultFiler>();
+            builder.Services.AddScoped<ILoggerService, LoggerService>();
+            //builder.Services.AddAuthentication();
+            #region  Configuring custom password Constraints
+
+            //builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
+            //{
+            //    options.Password.RequiredLength = 8;
+            //    options.Password.RequireNonAlphanumeric = false;
+            //    options.Password.RequireUppercase = true;
+            //}
+
+
+            //)
+
+            //    .AddEntityFrameworkStores<BookDbContext>();//add or retrieve info about user using EFCore and SQlServer
+            #endregion
+            builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+                .AddEntityFrameworkStores<BookDbContext>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -34,9 +54,10 @@ namespace BookAPPWithdatabase
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            //Authentication middleware
+            app.UseAuthentication();
             app.UseRouting();
-
+            
             app.UseAuthorization();
 
             app.MapControllerRoute(

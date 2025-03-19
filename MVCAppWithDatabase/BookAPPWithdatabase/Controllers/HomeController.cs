@@ -2,6 +2,9 @@
 using Microsoft.AspNetCore.Mvc;
 using BookAPPWithdatabase.Models;
 using BookAPPWithdatabase.Logginglogic;
+using BookAPPWithdatabase.Service;
+using Microsoft.AspNetCore.Authorization;
+using BookAPPWithdatabase.constants;
 
 namespace BookAPPWithdatabase.Controllers;
 //[Route("[controller]/[action]")]
@@ -9,20 +12,24 @@ namespace BookAPPWithdatabase.Controllers;
 [ServiceFilter(typeof(CustomLogger))]
 [ServiceFilter(typeof(AddResultFiler))]
 //[AddHeader]
+[Authorize(Roles =Role.Adminstartor)]
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
-
-    public HomeController(ILogger<HomeController> logger)
-    {
-        _logger = logger;
-    }
+    public ILoggerService Logger { get; set; }
+    //public HomeController(ILogger<HomeController> logger)
+    //{
+    //    _logger = logger;
+    //}
     //[Route("")]
     //[Route("Home")]
     //[Route("Home/Index")]
-    [Route("Index")]
-    public IActionResult Index()
+    //[Route("Index")]
+    public IActionResult Index([FromServices]ILoggerService loggerService)
     {
+        Logger = loggerService;//Property injection
+        Logger?.Log("Index  action is executing");
+
         return View();
     }
     [Route("")]

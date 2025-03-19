@@ -12,6 +12,7 @@ namespace BookAPPWithdatabase.Controllers
     [ServiceFilter(typeof(ExceptionHandlerAttribute))]
     [ServiceFilter(typeof(CustomLogger))]
     //[Authorize(Roles ="Admin")]
+    [Authorize]
     public class BookController : Controller
     {
         readonly IBookService _bookService;
@@ -19,6 +20,7 @@ namespace BookAPPWithdatabase.Controllers
         {
             _bookService = bookService;
         }
+        [AllowAnonymous]
         public async Task<IActionResult> GetAllBooks()
         {
 
