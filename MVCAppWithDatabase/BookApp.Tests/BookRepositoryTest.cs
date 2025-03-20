@@ -13,12 +13,12 @@ namespace BookApp.Tests
 {
    public class BookRepositoryTest:IClassFixture<BookDbTestFixture>
     {
-        //readonly BookDbContext _context;
+        readonly BookDbContext _context;
         readonly IBookRepository _bookRepository;
         public BookRepositoryTest(BookDbTestFixture bookDbTestFixture)
         {
-            //    _context = bookDbTestFixture._bookdbContext;
-            //    _bookRepository = new BookRepository(_context);
+                //_context = bookDbTestFixture._bookdbContext;
+                //_bookRepository = new BookRepository(_context);
             _bookRepository = bookDbTestFixture.BookRepository ?? throw new ArgumentNullException(nameof(bookDbTestFixture.BookRepository));
            
          }
