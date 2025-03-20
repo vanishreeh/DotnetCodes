@@ -10,5 +10,6 @@ namespace BookAPPWithdatabase.Repository
         Task<Book> GetBookById(int id);
         Task<IEnumerable<Book>> Getbooks();
         Task<IEnumerable<Book>> SearchBook(string name);
+        
     }
 }
