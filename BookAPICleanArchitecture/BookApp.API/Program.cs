@@ -1,4 +1,7 @@
+
+using BooApp.Application;
 using BookApp.Infrastructure;
+
 namespace BookApp.API
 {
     public class Program
@@ -8,6 +11,7 @@ namespace BookApp.API
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            builder.Services.AddApplicationServices();
             builder.Services.AddInterfaceServices(builder.Configuration);
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

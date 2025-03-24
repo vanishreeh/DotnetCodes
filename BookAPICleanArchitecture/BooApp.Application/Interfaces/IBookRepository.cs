@@ -10,10 +10,10 @@ namespace BooApp.Application.Interfaces
    public interface IBookRepository
     {
         Task<IEnumerable<Book>> GetBooks();
-        Task<Book> GetBookByIdAsync();
-        Task<Book> AddBookAsync();
+        Task<Book> GetBookByIdAsync(int id);
+        Task<Book> AddBookAsync(Book book);
         Task<Book> UpdateBookAsync(int bookId,Book book);
-        Task<bool> DeleteBookAsync();
+        Task<bool> DeleteBookAsync(int id);
 
 
     }

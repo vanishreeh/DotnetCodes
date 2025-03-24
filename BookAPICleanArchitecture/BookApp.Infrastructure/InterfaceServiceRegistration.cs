@@ -18,7 +18,7 @@ namespace BookApp.Infrastructure
 
 
             });
-            //services.AddScoped<IBookRepository, BookRepository>();
+            services.AddScoped<IBookRepository, BookRepository>();
             return services;
 
         }
