@@ -1,0 +1,15 @@
+﻿using BookApp.Domain;
+using MediatR;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BooApp.Application.Features.BookFeature.Query.GetAllBooks
+{
+  public record GetAllBooksQuery():IRequest<IEnumerable<Book>>;
+
+   
+    
+}
