@@ -1,5 +1,6 @@
 
 using BooApp.Application;
+using BookApp.API.Middleware;
 using BookApp.Infrastructure;
 
 namespace BookApp.API
@@ -26,7 +27,7 @@ namespace BookApp.API
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
-
+            app.UseMiddleware<ExceptionMiddleware>();
             app.UseHttpsRedirection();
 
             app.UseAuthorization();

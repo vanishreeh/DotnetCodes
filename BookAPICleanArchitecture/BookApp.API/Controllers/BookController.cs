@@ -42,16 +42,20 @@ namespace BookApp.API.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteBookAsync(int id)
         {
-            try
-            {
-                var result = await _mediator.Send(new DeleteBookCommand(id));
-                return Ok(result);
-            }
-            catch(NotFoundException ex)
-            {
-                return NotFound(ex.Message);
-            }
-            
+            #region Exception Handling
+            //try
+            //{
+            //    var result = await _mediator.Send(new DeleteBookCommand(id));
+            //    return Ok(result);
+            //}
+            //catch(NotFoundException ex)
+            //{
+            //    return NotFound(ex.Message);
+            //}
+            #endregion
+            var result = await _mediator.Send(new DeleteBookCommand(id));
+            return Ok(result);
+
         }
     }
 }
