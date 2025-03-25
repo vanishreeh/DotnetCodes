@@ -1,5 +1,6 @@
 
 using BooApp.Application;
+using BooApp.Application.Models.Identity;
 using BookApp.API.Middleware;
 using BookApp.Identity;
 using BookApp.Infrastructure;
@@ -16,6 +17,7 @@ namespace BookApp.API
             builder.Services.AddApplicationServices();
             builder.Services.AddInterfaceServices(builder.Configuration);
             builder.Services.AddIdentityServices(builder.Configuration);
+            builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection("JwtSettings"));
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();

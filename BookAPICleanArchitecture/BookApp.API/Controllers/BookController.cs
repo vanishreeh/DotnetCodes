@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BookApp.API.Controllers
 {
-    [Authorize(Roles = "User")]
+    //[Authorize(Roles = "User")]
     [Route("api/[controller]")]
     [ApiController]
    

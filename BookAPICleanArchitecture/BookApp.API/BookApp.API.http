@@ -1,6 +1,6 @@
 @BookApp.API_HostAddress = http://localhost:5271
 
-GET {{BookApp.API_HostAddress}}/Book/2
+GET {{BookApp.API_HostAddress}}/api/Book/2
 Accept: application/json
 
 ###
