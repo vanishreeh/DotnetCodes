@@ -14,10 +14,16 @@ namespace BookApp.API.Controllers
         {
             _authService = authService;
         }
-        [HttpPost("register")]
+        [HttpPost("login")]
         public async Task<ActionResult<AuthResponse>>Login(AuthRequest authRequest)
         {
            var response= await _authService.Login(authRequest);
+            return Ok(response);
+        }
+        [HttpPost("register")]
+        public async Task<ActionResult<RegistrationResponse>> Register(RegistrationRequest request)
+        {
+            var response = await _authService.Register(request);
             return Ok(response);
         }
     }

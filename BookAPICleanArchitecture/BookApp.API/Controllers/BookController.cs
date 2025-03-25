@@ -5,13 +5,16 @@ using BooApp.Application.Features.BookFeature.Query.GetAllBooks;
 using BooApp.Application.Features.BookFeature.Query.GetBookById;
 using BookApp.Domain;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookApp.API.Controllers
 {
+    [Authorize(Roles = "User")]
     [Route("api/[controller]")]
     [ApiController]
+   
     public class BookController : ControllerBase
     {
         readonly IMediator _mediator;

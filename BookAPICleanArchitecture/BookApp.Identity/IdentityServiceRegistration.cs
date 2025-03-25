@@ -1,5 +1,7 @@
-﻿using BookApp.Identity.Context;
+﻿using BooApp.Application.Interfaces.Identity;
+using BookApp.Identity.Context;
 using BookApp.Identity.Model;
+using BookApp.Identity.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -22,7 +24,7 @@ namespace BookApp.Identity
             services.AddIdentity<ApplicationUser, IdentityRole>().
                 AddEntityFrameworkStores<BookAppIdentityDbContext>().AddDefaultTokenProviders();
 
-
+            services.AddScoped<IAuthService, AuthService>();
 
             
             return services;
