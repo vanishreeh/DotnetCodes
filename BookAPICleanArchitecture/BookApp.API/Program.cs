@@ -1,6 +1,7 @@
 
 using BooApp.Application;
 using BookApp.API.Middleware;
+using BookApp.Identity;
 using BookApp.Infrastructure;
 
 namespace BookApp.API
@@ -14,6 +15,7 @@ namespace BookApp.API
             // Add services to the container.
             builder.Services.AddApplicationServices();
             builder.Services.AddInterfaceServices(builder.Configuration);
+            builder.Services.AddIdentityServices(builder.Configuration);
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();

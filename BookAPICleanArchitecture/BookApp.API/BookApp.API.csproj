@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BooApp.Application\BooApp.Application.csproj" />
+    <ProjectReference Include="..\BookApp.Identity\BookApp.Identity.csproj" />
     <ProjectReference Include="..\BookApp.Infrastructure\BookApp.Infrastructure.csproj" />
   </ItemGroup>
 

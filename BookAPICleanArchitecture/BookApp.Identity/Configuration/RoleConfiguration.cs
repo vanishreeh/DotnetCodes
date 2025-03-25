@@ -16,14 +16,14 @@ namespace BookApp.Identity.Configuration
             builder.HasData(
                 new IdentityRole
                 {
-                    Id="",
+                    Id= "41886008 - 6086 - 1fbf - b923 - 2879a6680b9a",
                     Name="User",
                     NormalizedName="USER"
 
                 },
                 new IdentityRole
                 {
-                    Id = "",
+                    Id = "41776008 - 6086 - 1fbf - b923 - 2879a6680b9a",
                     Name = "Administartor",
                     NormalizedName = "ADMINISTRATOR"
                 }

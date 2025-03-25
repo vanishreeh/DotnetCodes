@@ -18,7 +18,7 @@ namespace BookApp.Identity.Configuration
             builder.HasData(
                 new ApplicationUser
                 {
-                    Id = "",
+                    Id = "41776062 - 6086 - 1fbf - b923 - 2879a6680b9a",
                     Email = "admin@gmail.com",
                     NormalizedEmail = "ADMIN@GMAIL.COM",
                     FirstName = "Admin",
@@ -30,7 +30,7 @@ namespace BookApp.Identity.Configuration
                 },
                  new ApplicationUser
                  {
-                     Id = "",
+                     Id = "41776062 - 6086 - 1fcf - b923 - 2879a6680b9a",
                      Email = "vani@gmail.com",
                      NormalizedEmail = "VANI@GMAIL.COM",
                      FirstName = "vani",
