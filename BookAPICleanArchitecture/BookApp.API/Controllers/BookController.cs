@@ -21,6 +21,40 @@ namespace BookApp.API.Controllers
             _mediator = mediator;
             
         }
+        #region
+        //[HttpGet("Status-Code")]
+        ////using statuscode method
+        //public IActionResult GetCustomStatusCode()
+        //{
+        //    return StatusCode(445, new { message = "This is CustomStatuscode" });
+        //}
+        //[HttpGet("objectResult")]
+        //public IActionResult GetCustomStatusCodeWithobjectResult()
+        //{
+        //    return new ObjectResult(new { message = "Custom objectresult" }) { StatusCode = 450 };
+        //}
+        //[HttpGet("ActionResult-code")]
+        //public ActionResult<string> GetCustomStatusCodeWithAction()
+        //{
+        //    return StatusCode(351,"custom result with Action");
+        //}
+        //[HttpGet("ProblemResult")]
+        //public IActionResult GetCustomStatusCodeWithProblemResult()
+        //{
+        //    return Problem(
+        //        title: "Error Response",
+        //        detail: "request Not correct",
+        //        statusCode: 299
+        //        );
+        //}
+        //[HttpGet("contextResult")]
+        //public void GetCustomStatusCodeWithcontextResult()
+        //{
+        //    HttpContext.Response.StatusCode = 203;
+        //}
+
+
+        #endregion
         [HttpGet]
         public async Task<IActionResult> GetBooksAsync()
         {
