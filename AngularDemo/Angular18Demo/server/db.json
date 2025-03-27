@@ -1,0 +1,51 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Laptop",
+      "price": 100000
+    },
+    {
+      "id": "2",
+      "name": "HeadPhone",
+      "price": 1000
+    },
+    {
+      "id": "3",
+      "name": "TV",
+      "price": 30000
+    },
+    {
+      "id": "4",
+      "name": "Mobile",
+      "price": "15000"
+    },
+    {
+      "id": "e808"
+    },
+    {
+      "id": "1a13"
+    },
+    {
+      "id": "6",
+      "name": "Pen",
+      "price": "100"
+    },
+    {
+      "id": "6",
+      "name": "Pen",
+      "price": "100"
+    },
+    {
+      "id": "6",
+      "name": "Pen",
+      "price": "100"
+    },
+    {
+      "id": "415c"
+    },
+    {
+      "id": "6801"
+    }
+  ]
+}

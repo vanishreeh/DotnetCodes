@@ -1,0 +1,10 @@
+.card-layout{
+    display:flex;
+    flex-direction: row;
+}
+.card-body{
+    border:5px solid chocolate;
+    margin:15px;
+    background-color: aqua;
+    text-align:center
+}

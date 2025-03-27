@@ -1,0 +1,75 @@
+<!-- <div class="row">
+<div class="col-md-12">
+    Interpolation
+    <h1>{{productName}}</h1>
+    PropertyBinding
+    <input type= {{inputType}} [value]="productName" />
+</div>
+</div>
+<div>
+    Event Binding
+<button (click)="addProduct('productaddedSuccessfully')">ClickMe</button>
+</div>
+<div>
+    
+    <input type="text" value="{{productName}}">
+    two way binding
+    <input type="text" [(ngModel)]="productName">
+</div>
+
+<div>
+    <button (click)="displayMsg=!displayMsg">switchDom</button>
+    <p *ngIf="displayMsg">Good Morning</p>
+</div>
+<ul>
+    <li *ngFor="let item of products">{{item}}</li>
+</ul> -->
+<!-- <div class="card-layout">
+    <div class="card-body" *ngFor="let product of products">
+        <h1>{{product.id}}</h1>
+        <h1>{{product.name}}</h1>
+        <h1>{{product.price}}</h1>
+
+    </div>
+ </div> -->
+<div class="container mt-4  justify-content-center">
+ <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- <tr *ngFor="let product of products">  -->
+        @for (product of products;track product){
+        <tr>
+        <td>{{product.id}}</td>
+        <td>{{product.name}}</td>
+        <td>{{product.price}}</td>
+        <td>
+            <button type="button" class="btn btn-primary" (click)="updateProduct(product)">Update</button>
+        </td>
+      </tr>
+    }
+     
+    </tbody>
+    
+  </table>
+</div> 
+<h3>AddItem</h3>
+<input type="text" [(ngModel)]="newProduct.id" placeholder="Enter Id">
+<input type="text" [(ngModel)]="newProduct.name" placeholder="Enter Name"> 
+<input type="text" [(ngModel)]="newProduct.price" placeholder="Enter Price"> 
+<button (click)="addProduct()">AddProduct</button> 
+<!-- <div>
+    <li *ngFor="let product of products">
+        <input type="text" [(ngModel)]="product.id" placeholder="Enter Id">
+        <input type="text" [(ngModel)]="product.name" placeholder="Enter Name">
+        <input type="text" [(ngModel)]="product.price" placeholder="Enter Price">
+        <button type="button" class="btn btn-primary" (click)="updateProduct(product)">Update</button>
+
+    </li>
+</div> -->

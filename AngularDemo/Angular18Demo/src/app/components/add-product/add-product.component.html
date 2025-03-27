@@ -1,0 +1,27 @@
+<div>
+    <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title> AddProduct</mat-panel-title>
+        
+        </mat-expansion-panel-header>
+    </mat-expansion-panel>
+</div>
+<div>
+    <mat-form-field>
+        
+        <input type="text" [(ngModel)]="newProduct.id" name="id" matInput placeholder="Enter Id">
+    </mat-form-field>
+    <mat-form-field>
+        
+        <input type="text" [(ngModel)]="newProduct.name" name="name" matInput placeholder="Enter Name">
+    </mat-form-field>
+    <mat-form-field>
+        
+        <input type="text" [(ngModel)]="newProduct.price" name="price" matInput placeholder="Enter price">
+    </mat-form-field>
+    <div class="example-button-row">
+        <button mat-button (click)="addProduct()">AddProduct</button>
+        
+      </div>
+</div>
+
