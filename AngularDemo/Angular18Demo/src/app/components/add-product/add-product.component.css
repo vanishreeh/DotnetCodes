@@ -1,0 +1,13 @@
+.product-expansion-panel-wrapper{
+    width:50vw;
+    margin:auto;
+    margin-top: 20px;
+}
+.product-add-wrapper{
+    display:flex;
+    flex-direction: column;
+}
+.example-button-row{
+    display: flex;
+    justify-content: flex-end;
+}

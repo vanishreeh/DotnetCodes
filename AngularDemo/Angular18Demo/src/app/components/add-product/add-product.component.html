@@ -1,12 +1,12 @@
 <div>
-    <mat-expansion-panel hideToggle>
+    <mat-expansion-panel class="product-expansion-panel-wrapper">
         <mat-expansion-panel-header>
           <mat-panel-title> AddProduct</mat-panel-title>
         
         </mat-expansion-panel-header>
-    </mat-expansion-panel>
-</div>
-<div>
+    
+
+<div class="product-add-wrapper">
     <mat-form-field>
         
         <input type="text" [(ngModel)]="newProduct.id" name="id" matInput placeholder="Enter Id">
@@ -23,5 +23,7 @@
         <button mat-button (click)="addProduct()">AddProduct</button>
         
       </div>
+</div>
+</mat-expansion-panel>
 </div>
 
