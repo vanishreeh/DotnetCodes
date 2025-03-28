@@ -5,6 +5,7 @@ using BookApp.Identity.Model;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
@@ -45,11 +46,13 @@ namespace BookApp.Identity.Services
             var response = new AuthResponse
             {
                 Id = user.Id,
-                Email=user.Email,
-                UserName=user.UserName,
-                Token= new JwtSecurityTokenHandler().WriteToken(jwtSecurityToken)
-                
+                Email = user.Email,
+                UserName = user.UserName,
+                Token = new JwtSecurityTokenHandler().WriteToken(jwtSecurityToken)
+               
+
             };
+           // string userJwtSecurityTokenHandler = JsonConvert.SerializeObject(new { Token = response.Token, Name = response.UserName });
             return response;
         }
 
@@ -105,7 +108,8 @@ namespace BookApp.Identity.Services
             }
             else
             {
-               var errorResult= result.Errors.Select(e => e.Description).ToList();
+                var errorResult = string.Join(", ", result.Errors.Select(e => e.Description));
+                //var errorResult= result.Errors.Select(e => e.Description).ToList();
                 throw new BadRequestException($"{errorResult}");
             }
 
