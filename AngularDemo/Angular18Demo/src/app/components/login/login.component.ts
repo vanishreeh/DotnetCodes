@@ -4,6 +4,7 @@ import { UserService } from '../../services/user.service';
 import { FormsModule, NgForm } from '@angular/forms';
 import { error } from 'console';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -39,7 +40,7 @@ this.userService.login(this.loginModel).subscribe({
     localStorage.setItem('token',response.token)
     alert('LoginSuccess')
     loginForm.reset();
-   
+    
   },
   error:(error)=>{
     console.error('LoginFailed',error)
@@ -48,6 +49,7 @@ this.userService.login(this.loginModel).subscribe({
     
 
   }
+  
 })
 
 }
