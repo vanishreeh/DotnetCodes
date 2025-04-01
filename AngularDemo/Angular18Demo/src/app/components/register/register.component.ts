@@ -5,6 +5,7 @@ import { Register } from '../../models/register';
 import { error } from 'console';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { RouterService } from '../../services/router.service';
 
 @Component({
   selector: 'app-register',
@@ -16,7 +17,7 @@ import { RouterModule } from '@angular/router';
 export class RegisterComponent implements OnInit {
   registerForm!:FormGroup;
  errorMsg='';
-   constructor(private  fb:FormBuilder, private userService: UserService,){
+   constructor(private  fb:FormBuilder, private userService: UserService,private routerService:RouterService){
 
    }
   ngOnInit():void{
@@ -39,6 +40,8 @@ export class RegisterComponent implements OnInit {
         console.log(response);
         alert('Registration Success');
         this.registerForm?.reset();
+       // this.router.navigate(['login'])
+       this.routerService.goToLogin();
         
       },
       error:(err)=>{

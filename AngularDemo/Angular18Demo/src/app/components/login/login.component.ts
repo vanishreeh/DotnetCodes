@@ -4,7 +4,9 @@ import { UserService } from '../../services/user.service';
 import { FormsModule, NgForm } from '@angular/forms';
 import { error } from 'console';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+
+import{Router}from '@angular/router';
+import { RouterService } from '../../services/router.service';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +18,7 @@ import { RouterModule } from '@angular/router';
 export class LoginComponent {
 loginModel:Login=new Login('','');
 errorMsg='';
-constructor(private userService:UserService){}
+constructor(private routerService:RouterService,private userService:UserService){}
 
 ngonInit(){
   //this.loginUser();
@@ -40,6 +42,8 @@ this.userService.login(this.loginModel).subscribe({
     localStorage.setItem('token',response.token)
     alert('LoginSuccess')
     loginForm.reset();
+   // this.router.navigate(['dashBoard'])
+   this.routerService.gotoDashBoard();
     
   },
   error:(error)=>{
