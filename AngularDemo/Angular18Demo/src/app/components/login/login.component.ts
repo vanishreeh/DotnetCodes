@@ -40,6 +40,7 @@ this.userService.login(this.loginModel).subscribe({
   next:(response:AuthResponseModel)=>{
     console.log('Login Succes',response);
     localStorage.setItem('token',response.token)
+    localStorage.setItem('email',response.email);
     alert('LoginSuccess')
     loginForm.reset();
    // this.router.navigate(['dashBoard'])

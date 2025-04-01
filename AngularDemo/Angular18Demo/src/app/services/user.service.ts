@@ -20,4 +20,17 @@ export class UserService {
   register(user:Register):Observable<RegistrationResponse>{
     return this.http.post<RegistrationResponse>(`${this.apiUrl}/register`,user)
   }
+
+  // isLoggedIn():boolean{
+  // let tokenValue= localStorage.getItem('token');
+  // if(tokenValue){
+  //   return true;
+  // }
+  // else{
+  //   return false;
+  // }
+  // }
+  isLoggedIn():boolean{
+    return !!localStorage.getItem('token');
+  }
 }

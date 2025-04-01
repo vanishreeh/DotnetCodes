@@ -13,9 +13,12 @@ import { CommonModule } from '@angular/common';
 })
 export class DashboardComponent {
 books:Book[]=[];
+displayEmail?:string|null
 constructor(private bookService:BooksService){}
 ngOnInit(){
+  this.displayEmail=localStorage.getItem('email');
   this.getAllBooks();
+
 }
   getAllBooks() {
    this.bookService.getBooks().subscribe(data=>{
