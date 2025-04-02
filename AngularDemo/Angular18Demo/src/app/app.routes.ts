@@ -9,9 +9,10 @@ import { LogoutComponent } from './components/logout/logout.component';
 import {provideRouter } from '@angular/router';
 
 export const routes: Routes = [
+     //Lazy Loading
     //  {
-    //     path:'header',loadComponent:()=>import('./header.component').then(m=>m.HeaderComponent),
-    //  }
+    //     path:'header',loadComponent:()=>import('./components/header/header.component').then(m=>m.HeaderComponent),
+    //  },
     
     {path:'register',component:RegisterComponent},
     {path:'login',component:LoginComponent},
