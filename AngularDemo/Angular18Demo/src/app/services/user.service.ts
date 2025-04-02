@@ -1,13 +1,15 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AuthResponseModel, Login } from '../models/login';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Register, RegistrationResponse } from '../models/register';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
+  private loggedIn=new BehaviorSubject<boolean>(false);
+  isLoggedIn$=this.loggedIn.asObservable();
   private apiUrl="https://localhost:7134/api/Auth";
 //https://localhost:7134/api/Auth/login
 //https://localhost:7134/api/Auth/register
@@ -32,5 +34,9 @@ export class UserService {
   // }
   isLoggedIn():boolean{
     return !!localStorage.getItem('token');
+  }
+  //To Notify subscribes
+  updateLoginStatus(isLoggedIn:boolean){
+    this.loggedIn.next(isLoggedIn);
   }
 }
