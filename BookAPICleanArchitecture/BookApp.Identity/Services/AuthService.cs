@@ -3,14 +3,14 @@ using BooApp.Application.Interfaces.Identity;
 using BooApp.Application.Models.Identity;
 using BookApp.Identity.Model;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
-using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
+
 using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
+
 using System.Security.Claims;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -43,20 +43,48 @@ namespace BookApp.Identity.Services
                 throw new BadRequestException($" password Credentials are wrong");
             }
           JwtSecurityToken jwtSecurityToken=  await GenerateToken(user);
+            //Invoke Refresh Token
+            var refreshToken = GenerateRefreshToken();
+            // Store refresh token in user entity
+            user.RefreshToken = refreshToken;
+            user.RefreshTokenExpiryTime = DateTime.UtcNow.AddDays(7); 
+            await _userManager.UpdateAsync(user);
+            
+
+            // string userJwtSecurityTokenHandler = JsonConvert.SerializeObject(new { Token = response.Token, Name = response.UserName });
             var response = new AuthResponse
             {
                 Id = user.Id,
                 Email = user.Email,
                 UserName = user.UserName,
-                Token = new JwtSecurityTokenHandler().WriteToken(jwtSecurityToken)
-               
+                Token = new JwtSecurityTokenHandler().WriteToken(jwtSecurityToken),
+                RefreshToken = refreshToken
+
 
             };
-           // string userJwtSecurityTokenHandler = JsonConvert.SerializeObject(new { Token = response.Token, Name = response.UserName });
             return response;
         }
+        public async Task<RequestToken> RefreshToken(string refreshToken)
+        {
+            var user = await _userManager.Users.SingleOrDefaultAsync(u => u.RefreshToken == refreshToken);
+            if (user == null || user.RefreshTokenExpiryTime <= DateTime.UtcNow)
+                throw new UnauthorizedAccessException("Invalid or expired refresh token");
 
-        private async Task<JwtSecurityToken> GenerateToken(ApplicationUser user)
+            var newJwtToken = await GenerateToken(user);
+            var newRefreshToken = GenerateRefreshToken();
+
+            user.RefreshToken = newRefreshToken;
+            user.RefreshTokenExpiryTime = DateTime.UtcNow.AddDays(7);
+            await _userManager.UpdateAsync(user);
+
+            return new RequestToken
+            {
+                Token = new JwtSecurityTokenHandler().WriteToken(newJwtToken),
+                RefreshToken = newRefreshToken
+            };
+        }
+
+        public async Task<JwtSecurityToken> GenerateToken(ApplicationUser user)
         {
             //Get User Information from Db
           var userClaims=  await _userManager.GetClaimsAsync(user);
@@ -114,5 +142,19 @@ namespace BookApp.Identity.Services
             }
 
         }
+        private string GenerateRefreshToken()
+        {
+            var randomBytes = new byte[32];
+            using (var rng = RandomNumberGenerator.Create())
+            {
+                rng.GetBytes(randomBytes);
+            }
+            return Convert.ToBase64String(randomBytes);
+        }
+
+
+
+
     }
+    
 }

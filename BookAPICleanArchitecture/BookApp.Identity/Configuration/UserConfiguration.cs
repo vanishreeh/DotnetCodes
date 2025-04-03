@@ -25,7 +25,8 @@ namespace BookApp.Identity.Configuration
                     LastName = "system",
                     UserName = "admin@gmail.com",
                     NormalizedUserName = "ADMIN@GMAIL.COM",
-                    PasswordHash = hasher.HashPassword(null, "Admin@123")
+                    PasswordHash = hasher.HashPassword(null, "Admin@123"),
+                    RefreshToken="abcd"
 
                 },
                  new ApplicationUser
@@ -37,7 +38,8 @@ namespace BookApp.Identity.Configuration
                      LastName = "shree",
                      UserName = "vani@gmail.com",
                      NormalizedUserName = "VANI@GMAIL.COM",
-                     PasswordHash = hasher.HashPassword(null, "Vani@123")
+                     PasswordHash = hasher.HashPassword(null, "Vani@123"),
+                      RefreshToken = "xyze"
                  }
 
 

@@ -12,5 +12,6 @@ namespace BooApp.Application.Models.Identity
         public  string Issuer { get; set; }
         public string Audience { get; set; }
         public double DurationInMinutes { get; set; }
+        public int RefreshTokenExpiry { get; set; }
     }
 }

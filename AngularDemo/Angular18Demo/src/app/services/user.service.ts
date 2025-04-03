@@ -8,7 +8,7 @@ import { Register, RegistrationResponse } from '../models/register';
   providedIn: 'root'
 })
 export class UserService {
-  private loggedIn=new BehaviorSubject<boolean>(false);
+  private loggedIn=new BehaviorSubject<boolean>(this.isLoggedIn());
   isLoggedIn$=this.loggedIn.asObservable();
   private apiUrl="https://localhost:7134/api/Auth";
 //https://localhost:7134/api/Auth/login

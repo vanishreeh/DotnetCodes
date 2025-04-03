@@ -1,9 +1,7 @@
 ﻿using BooApp.Application.Models.Identity;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using BookApp.Identity.Model;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 
 namespace BooApp.Application.Interfaces.Identity
 {
@@ -11,5 +9,7 @@ namespace BooApp.Application.Interfaces.Identity
     {
       Task<AuthResponse>  Login(AuthRequest authRequest);
       Task<RegistrationResponse> Register(RegistrationRequest registrationRequest);
+       Task<RequestToken> RefreshToken(string refreshToken);
+        Task<JwtSecurityToken> GenerateToken(ApplicationUser user);
     }
 }

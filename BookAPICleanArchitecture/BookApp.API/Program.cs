@@ -37,7 +37,9 @@ namespace BookApp.API
                         .AllowAnyMethod()
                         .AllowAnyHeader());
             app.UseHttpsRedirection();
+            
             app.UseAuthentication();
+            app.UseMiddleware<JwtMiddleware>();
             app.UseAuthorization();
 
 
